@@ -1,0 +1,30 @@
+{
+    "name": "toomuchness",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.(ts|tsx)": [
+            "eslint --ignore-path .eslintignore"
+        ]
+    },
+    "scripts": {
+        "clean": "yarn workspaces foreach --all run clean",
+        "build": "yarn workspaces foreach --all run build",
+        "lint": "yarn workspaces foreach --all run lint",
+        "server": "yarn workspace server run start",
+        "client": "yarn workspace client run start"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^6.19.0",
+        "@typescript-eslint/parser": "^6.19.0",
+        "eslint": "^8.56.0",
+        "prettier": "^3.2.4"
+    }
+}
