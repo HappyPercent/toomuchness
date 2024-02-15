@@ -1,0 +1,48 @@
+enum HabitEventStatus {
+    DONE
+    NONE
+}
+
+type HabitEvent {
+    id: ID!
+    habit: Habit!
+    date: String!
+    status: HabitEventStatus!
+}
+
+input CreateHabitPayload {
+    name: String!
+    description: String!
+    periodicity: Int!
+    startDate: String!
+}
+
+input ChangeHabitEventStatusPayload {
+    id: ID!
+    status: HabitEventStatus!
+}
+
+enum HabitStatus {
+    ACTIVE
+    INACTIVE
+}
+
+type Habit {
+    id: ID!
+    name: String!
+    description: String!
+    periodicity: Int!
+    startDate: String!
+    status: HabitStatus!
+}
+
+type Query {
+    habitHistory: [HabitEvent]!
+    habitsByDate(date: String!): [HabitEvent]!
+    habits: [Habit]!
+}
+
+type Mutation {
+    createHabit(input: CreateHabitPayload): Habit!
+    changeHabitEventStatus(input: ChangeHabitEventStatusPayload): HabitEvent!
+}

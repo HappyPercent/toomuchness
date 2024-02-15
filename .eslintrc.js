@@ -18,5 +18,7 @@ module.exports = {
         sourceType: 'module',
         project: './tsconfig.base.json',
     },
-    rules: {},
+    'rules': {
+        '@typescript-eslint/no-explicit-any': 'warn',
+    },
 };
