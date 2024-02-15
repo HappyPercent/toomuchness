@@ -1,8 +1,8 @@
 import createHabit from './resolvers/createHabit';
-import habbits from './resolvers/habbits';
+import habits from './resolvers/habits';
 
 const root = {
-    habbits,
+    habits,
     createHabit,
 };
 
