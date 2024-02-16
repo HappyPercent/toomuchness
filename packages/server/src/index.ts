@@ -1,7 +1,7 @@
 import path from 'path';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require('dotenv').config({
-    path: path.resolve(__dirname, '../.env'),
+    path: path.resolve(__dirname, '../../../.env'),
 });
 
 import express from 'express';
@@ -19,5 +19,5 @@ app.use(
         graphiql: process.env.NODE_ENV === 'development',
     })
 );
-app.listen(process.env.APP_PORT);
-console.log(`Running a GraphQL API server at http://localhost:${process.env.APP_PORT}/graphql`);
+app.listen(process.env.SERVER_APP_PORT);
+console.log(`Running a GraphQL API server at http://localhost:${process.env.SERVER_APP_PORT}/graphql`);

@@ -4,7 +4,8 @@
     "description": "",
     "scripts": {
         "start": "ts-node src/index.ts",
-        "build": "tsc"
+        "build": "tsc",
+        "generate": "graphql-codegen"
     },
     "keywords": [],
     "author": "",
@@ -20,6 +21,9 @@
     },
     "dependencies": {
         "dotenv": "^16.3.2",
+        "@graphql-codegen/cli": "^5.0.2",
+        "@graphql-codegen/typescript": "^4.0.4",
+        "@graphql-codegen/typescript-resolvers": "^4.0.4",
         "express-graphql": "^0.12.0",
         "graphql": "^16.8.1",
         "pg": "^8.11.3"

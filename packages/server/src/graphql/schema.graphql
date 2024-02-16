@@ -37,9 +37,9 @@ type Habit {
 }
 
 type Query {
-    habitHistory: [HabitEvent]!
-    habitsByDate(date: String!): [HabitEvent]!
-    habits: [Habit]!
+    habitHistory: [HabitEvent!]
+    habitsByDate(date: String!): [HabitEvent!]
+    habits: [Habit!]
 }
 
 type Mutation {
